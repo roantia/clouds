@@ -2,3 +2,34 @@
 margin: 0;
 padding: 0;
 }
+
+/* VIDEO STUFFSTUFF */
+
+/* @media (min-aspect-ratio: 16/9) { */
+@media (min-aspect-ratio: 1/1) {
+  #myVideo {
+    width:100vw;
+    height: auto;
+  }
+}
+/* @media (max-aspect-ratio: 16/9) { */
+@media (max-aspect-ratio: 1/1) {
+  #myVideo {
+    width: auto;
+    height: 100vh;
+  }
+}
+
+.videoContainer {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+video {
+  position: absolute;
+  z-index: 1;
+}
