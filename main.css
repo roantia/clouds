@@ -1,0 +1,16 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+.flexboxpls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+img {
+  width: 20vw;
+  height: auto;
+  margin: 2.5vw;
+  object-fit: cover;
+}
