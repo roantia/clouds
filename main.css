@@ -2,6 +2,42 @@
 margin: 0;
 padding: 0;
 }
+/* 
+#navbar {
+  overflow: hidden;
+
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #3fff00;
+  text-align: center;
+  padding: 14px 60px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* #navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+} */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+} */
+
 
 .flexboxpls {
   display: flex;

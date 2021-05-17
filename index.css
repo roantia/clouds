@@ -1,0 +1,111 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.bg-img {
+  background-image: url("indexLinks/background-img.jpg");
+  min-height: 100vh;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+/* Position the navbar container inside the image */
+.container {
+  position: absolute;
+  width: auto;
+}
+
+.topnav {
+  overflow: hidden;
+  margin: 30px 10px;
+  width: 98vw;
+  text-decoration: none;
+  align-content: center;
+}
+
+.topnav a {
+  float: left;
+  width: calc(95% / 3 );
+  margin-left: 10px;
+  color: #3fff00;
+  border: 2px solid #3fff00;
+  border-radius: 15px;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 2em;
+}
+
+
+.topnav a:hover {
+  background-color: white;
+}
+
+
+
+.popup {
+    position:fixed;
+    top:0px;
+    left:0px;
+    background:rgba(0,0,0,0.75);
+    width:100vw;
+    height:100vh;
+    display:none;
+}
+
+/* Popup inner div */
+.popup-content {
+    width: 98%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 40px;
+    margin-top: 20px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,1);
+    border-radius: 3px;
+    background: #fff;
+    position: relative;
+}
+
+/* Popup close button */
+.close-button {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.8);
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    text-decoration:none;
+}
+
+.close-button:hover {
+    background: rgba(0,0,0,1);
+}
+
+
+.flexboxpls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+img {
+  width: 20vw;
+  height: auto;
+  margin: 2.5vw;
+  object-fit: cover;
+}
+
+
+
+@media screen and (max-width: 720px) {
+.popup-content {
+    width:90%;
+    }
+}
