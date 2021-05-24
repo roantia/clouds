@@ -31,7 +31,7 @@ body {
 }
 .topnav a {
   float: left;
-  width: calc(95% / 3 );
+  width: calc(90vw / 3 );
   margin-left: 10px;
   color: #3fff00;
   border: 2px solid #3fff00;
@@ -103,6 +103,6 @@ img {
 
 @media screen and (max-width: 720px) {
 .popup-content {
-    width:90%;
+    width: 95vw;
     }
 }
