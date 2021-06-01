@@ -20,3 +20,8 @@ $(function() {
     });
 
 });
+
+$('a.yourlink').click(function(e) {
+    e.preventDefault();
+    window.open('https://www.notion.so/GEO-CODE-MODE-f715bd087dc443259f3028d00de57fc8');
+  });
