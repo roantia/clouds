@@ -3,7 +3,7 @@ const keywordsContainer = document.querySelector('.keywords')
 const gallery = document.querySelector('.gallery')
 let visible
 
-let keywords = []
+let imgCount = 0
 let keywordTitle = document.createElement('div')
 keywordTitle.innerHTML = 'Filter by keyword:'
 keywordTitle.className = 'keyword'
@@ -26,6 +26,7 @@ for (let k = 0; k < database.length; k++) {
         dateContainer.appendChild(monthElement)
         dateContainer.style.display='none'
         keywordElement.appendChild(dateContainer)
+        imgCount += database[k][m].length
 
         monthElement.addEventListener('click', () => {
             gallery.innerHTML = ''
@@ -45,6 +46,25 @@ for (let k = 0; k < database.length; k++) {
     })
     
 }
+function loadImages() {
+    for (let r = 0; r < imgCount; r++) {
+        let krandom = Math.floor(Math.random()*database.length)
+        let mrandom = Math.floor(Math.random()*database[krandom].length)
+        let irandom = Math.floor(Math.random()*database[krandom][mrandom].length)
+        let path = database[krandom][mrandom][irandom]
+
+        if (!path.includes(".txt")) {
+            let img = document.createElement('img')
+            img.src = `img/${path}`
+            gallery.appendChild(img)
+            img.addEventListener('click', () => {
+                let current = img.offsetHeight
+                img.style.height = (current=='60') ? 'auto' : '60px'
+            })
+        }
+    }
+}
+setTimeout(loadImages, 100)
 
 
 function togglePopup(element) {
