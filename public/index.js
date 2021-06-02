@@ -24,12 +24,24 @@ for (let k = 0; k < database.length; k++) {
         monthElement.innerHTML = `>> ${month} 2021`
         
         dateContainer.appendChild(monthElement)
-        dateContainer.style.visibility='hidden'
+        dateContainer.style.display='none'
         keywordElement.appendChild(dateContainer)
+
+        monthElement.addEventListener('click', () => {
+            gallery.innerHTML = ''
+            for (let i = 0; i < database[k][m].length; i++) {
+                let path = database[k][m][i]
+                if (!path.includes(".txt")) {
+                    let img = document.createElement('img')
+                    img.src = `img/${path}`
+                    gallery.appendChild(img)
+                }
+            }
+        })   
     }
     keywordElement.addEventListener('click', () => {
-        let current = dateContainer.style.visibility
-        dateContainer.style.visibility = (current=='visible') ? 'hidden' : 'visible'
+        let current = dateContainer.style.display
+        dateContainer.style.display = (current=='block') ? 'none' : 'block'
     })
     
 }
