@@ -117,3 +117,16 @@ p {
   object-fit: cover;
   display:block;
 }
+.gallery .image {
+  position:relative;
+}
+.text {
+  position:absolute;
+  top:0;
+  padding:10px;
+  color:#3fff00;
+  font-size: 35px;
+  line-height: 1.5em;
+  text-align: left;
+  overflow:hidden;
+}

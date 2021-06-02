@@ -10,7 +10,7 @@ keywordTitle.className = 'keyword'
 keywordTitle.id = 'filter'
 keywordsContainer.appendChild(keywordTitle)
 
-function ajax(a,b,c){ // Url, Callback, just a placeholder
+function ajax(a,b,c){//url,function,just a placeholder
  c=new XMLHttpRequest;
  c.open('GET',a);
  c.onload=b;
@@ -41,19 +41,23 @@ for (let k = 0; k < database.length; k++) {
             for (let i = 0; i < database[k][m].length; i++) {
                 let path = database[k][m][i]
                 if (!path.includes(".txt")) {
+                    let imgdiv = document.createElement('div')
+                    imgdiv.className = 'image'
                     let img = document.createElement('img')
                     img.src = `img/${path}`
-                    gallery.appendChild(img)
+                    imgdiv.appendChild(img)
+                    gallery.appendChild(imgdiv)
 
                     let lang = path.split('/')[2].split('-')[0]
-                    let txtpath = window.location.origin + '/img/' + path.split('.')[0] + '.txt'
+                    let txtpath = window.location.origin + '/img/' + path + '.txt'
+                    ajax(txtpath,function(){
+                      let imgtext = document.createElement('div')
+                        imgtext.className = 'text'
+                        imgtext.innerHTML = this.response
+                        imgdiv.appendChild(imgtext)
+                    });
 
-                    
-
-                    img.addEventListener('click', () => {
-                        ajax(txtpath,function(){
-                            alert(this.response);
-                        });
+                    imgdiv.addEventListener('click', () => {
                         let current = img.offsetHeight
                         img.style.height = (current=='60') ? 'auto' : '60px'
                     })
