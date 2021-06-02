@@ -1,133 +1,35 @@
 * {
-  box-sizing: border-box;
-  padding:0;
-  margin:0;
+margin: 0;
+padding: 0;
 }
-html, body {
-  width:100vw;
-  height:100vh;
-}
-body {
-  /* padding: 30px; */
 
-  font-family: Helvetica, Arial, sans-serif;
+/* VIDEO STUFFSTUFF */
 
-  background-image: url("background-img.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/* @media (min-aspect-ratio: 16/9) { replace 16/9 as video ratio */
+@media (min-aspect-ratio: 1/1) {
+  #myVideo {
+    width:100vw;
+    height: auto;
+  }
 }
-/* Position the navbar container inside the image */
-nav {
-  display:flex;
-  justify-content: space-around;
+/* @media (max-aspect-ratio: 16/9) { replace 16/9 as video ratio */
+@media (max-aspect-ratio: 1/1) {
+  #myVideo {
+    width: auto;
+    height: 100vh;
+  }
+}
+
+.videoContainer {
+  height: 100vh;
   width: 100vw;
-  text-decoration: none;
-  align-content: center;
-}
-nav a {
-  margin: 30px 2vw;
-  color: #3fff00;
-  border: 2px solid #3fff00;
-  border-radius: 15px;
-  text-decoration: none;
-  font-size: 2em;
-  padding: 2vh 8vw;
-}
-nav a:hover {
-  background-color: white;
-  cursor:pointer;
-}
-h1 {
-  margin: 10px 10px;
-  font-size: 2em;
-  color: #3fff00;
-  font-weight: normal;
-}
-.title {
   position: absolute;
-  bottom: 20px;
-  left: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
-.popup {
-  z-index:5;
-  position:absolute;
-  top:52.5%;
-  left:50%;
-  transform: translate(-50%,-50%);
-  background:rgba(0,0,0,0.75);
-  width:calc(95vw - 20px);
-  height:calc(94vh - 120px - 2em);
-  display:none;
-  overflow-y:scroll;
-  overflow-x: hidden;
-
-  padding:30px;
-}
-.popup-overlay {
-  z-index: 0;
+video {
   position: absolute;
-  top:0;
-  left:0;
-  display:none;
-  width:100vw;
-  height:100vh;
-}
-
-/* Popup inner div */
-p {
-  text-indent: 1.5em;
-  color:#3fff00;
-  font-size: 1.5em;
-}
-#research a {
-  color:#008fff;
-  margin:10px;
-  font-size: 1.5em;
-}
-#research a:hover {
-  font-size: 2em;
-  border-bottom:4px;
-}
-#archive .keywords {
-  display:flex;
-  justify-content: space-between;
-  padding-bottom: 20px;
-}
-#archive .keyword {
-  color:#3fff00;
-  font-size: 1.5em;
-  text-align: left;
-}
-#archive .keyword:hover #archive .month:hover {
-  cursor:default;
-}
-.keyword .month {
-  padding-left: 1.5em;
-  padding-top: 0.5em;
-}
-.gallery {
-  width:100%;
-  height:100%;
-}
-.gallery img {
-  margin:0;
-  padding:0;
-  width: 100%;
-  height:60px;
-  object-fit: cover;
-  display:block;
-}
-.gallery .image {
-  position:relative;
-}
-.text {
-  position:absolute;
-  top:0;
-  padding:10px;
-  color:#3fff00;
-  font-size: 35px;
-  line-height: 1.5em;
-  text-align: left;
-  overflow:hidden;
+  z-index: 1;
 }

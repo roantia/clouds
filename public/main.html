@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The #teargas Archive</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="src/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <nav>
+    <a id="research" onclick="togglePopup(this)">Research</a>
+    <a id="archive" onclick="togglePopup(this)">Archive</a>
+    <a id="about" onclick="togglePopup(this)">About</a>
+  </nav>
+  <h1 class="title">A Visual Research into the use and effects of #teargas, using social media.</h1>
+  <div class="popup" id="research">
+      <h1>Research</h1>
+          <p>
+            We are led to believe tear gas is a safe method of dispersing participants of “violent” protests. Tear gas is categorized as one of the “less-lethal weapons” since it is not designed to kill. In reality, the weapon can surely cause lethal effect. Police forces often use the weapon in large quantities or fire the cans directly at the (often peaceful) protesters.
+          </p>
+          <p>
+            With our two social media scrapers (using Instagram API and Twitter API), we searched for footage of tear gas, mainly used during protests/demonstrations. In order to obtain this data, we used specific keywords related to teargas, which were translated to all available languages using Google Translate API, and searched for in a global scale. By using public platforms, we aimed for the footage taken by the public all around the world, not the media nor the government. Since media footage can be framed, and in some cases, government controlled, we aim for a more transparent reality of where, when, and in what quantities tear gas is used, by giving the stage to the public.
+          </p>
+          <a target="_blank" href="https://www.notion.so/GEO-CODE-MODE-f715bd087dc443259f3028d00de57fc8"  class="links" style="text-decoration: none">The Group Notion Document</a>
+  </div>
+
+  <div class="popup" id="archive">
+      <div class="keywords"></div>
+      <div class="gallery"></div>
+  </div>
+
+
+  <div class="popup" id="about">
+      <h1>About</h1>
+        <p>
+          Coding, processing, and forecasting in Earth sensing are explored. A sequence of inputs and outputs challenges our planet, constantly shifting the landscape into differing digital states. Research and design outcomes will transcend these modes via scraping, sensorial receiving, hacking, and instrumentation. By accessing data, digital languages enable insights into materialities, visual mapping, and politics of geography. These conditions of active raw materials will become daily tools to design from, allowing forecasting of information. Examination of meteorological data types (light, rain, heat, radiation, atmospheric pressure, gases) will be explored through API programming, Arduinos, remote sensing, field walking, DIY-electronics, and spatial information. These methods should expand beyond optics and into the depths of data-apophenia. The assignment investigates full-spectrum design, and boundaries of geo-informatic maps. Design practice is fused with scientific knowledge, including computer engineering, organic chemistry, biological manipulation, and wave physics.
+        </p>
+  </div>
+
+  <div class="popup-overlay" onclick="closePopup()"></div>
+
+  <script type="text/javascript" src="img/database.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>
