@@ -27,7 +27,7 @@ function readDir(directoryPath){
 	        return console.log('Unable to scan directory: ' + err)
 	    } 
 	    dirs_key.forEach(function (dir_key) {
-	    	if (dir_key !== 'database.js') {
+	    	if (dir_key !== 'database.js' && '.DS_Store') {
 	    		let dk = []
 		    	fs.readdir(directoryPath + dir_key, function (err, dirs_month) {
 		    	
@@ -53,7 +53,7 @@ function readDir(directoryPath){
 	    })
 	})
 	setTimeout(function(){ 
-		fs.writeFile(directoryPath +'database.js', JSON.stringify(database),function(err, result) {
+		fs.writeFile(directoryPath +'database.js', 'database = ' + JSON.stringify(database),function(err, result) {
 	    	if(err) console.log('error', err);
 	   	});
 	}, 65);
