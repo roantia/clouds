@@ -1,3 +1,4 @@
+const body = document.querySelector('body')
 const popupOverlay = document.querySelector('.popup-overlay')
 const keywordsContainer = document.querySelector('.keywords')
 const gallery = document.querySelector('.gallery')
@@ -77,6 +78,7 @@ for (let k = 0; k < database.length; k++) {
     })
     
 }
+
 function loadImages() {
     for (let r = 0; r < imgCount; r++) {
         let krandom = Math.floor(Math.random()*database.length)
@@ -118,12 +120,12 @@ function togglePopup(element) {
     visible = element.id
     const popup = document.querySelector('#' + visible+ '.popup')
     
-    popup.style.display = 'block'
-    popupOverlay.style.display = 'block'
+    popup.style.visibility = 'visible'
+    popupOverlay.style.visibility = 'visible'
 }
 function closePopup(element) {
     const popup = document.querySelector('#' + visible+ '.popup')
     
-    popup.style.display = 'none'
-    popupOverlay.style.display = 'none'
+    popup.style.visibility = 'hidden'
+    popupOverlay.style.visibility = 'hidden'
 }

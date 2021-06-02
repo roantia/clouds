@@ -6,23 +6,30 @@
   <link rel="stylesheet" type="text/css" href="index.css">
   <script src="src/jquery-3.6.0.min.js"></script>
 </head>
-<body>
+<body class="loading">
 
   <div class="videoContainer" >
-    <video autoplay loop id="myVideo">
+    <video autoplay muted id="myVideo">
       <source src="src/videocodingfinal.mp4" type="video/mp4">
     </video>
   </div>
 
   <div class="continue">
-    <a href="main.html">Continue -></a>
+    <a href="main.html">Continue >></a>
   </div>
 <script>
-$(document).ready(function(){
-    $("#myVideo").click(function(){
-       $(this).get(0).paused ? $(this).get(0).play() : $(this).get(0).pause();
-    });
- });
+  const video = document.querySelector('video') 
+  video.addEventListener('click', () => {
+    let state = video.paused
+    if (state === true) {
+      video.play()
+    } else {
+      video.pause()
+    }
+  })
+  video.addEventListener('ended', () => {
+    window.location.href = 'main.html'
+  })
 </script>
 </body>
 </html>

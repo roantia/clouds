@@ -7,6 +7,9 @@ html, body {
   width:100vw;
   height:100vh;
 }
+html {
+  background: black;
+}
 body {
   /* padding: 30px; */
 
@@ -16,6 +19,10 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  opacity:1;
+  animation: fadein 1s ease-in;
+  animation-iteration-count: 1
 }
 /* Position the navbar container inside the image */
 nav {
@@ -58,7 +65,7 @@ h1 {
   background:rgba(0,0,0,0.75);
   width:calc(95vw - 20px);
   height:calc(94vh - 120px - 2em);
-  display:none;
+  visibility:hidden;
   overflow-y:scroll;
   overflow-x: hidden;
 
@@ -69,7 +76,7 @@ h1 {
   position: absolute;
   top:0;
   left:0;
-  display:none;
+  visibility:hidden;
   width:100vw;
   height:100vh;
 }
@@ -131,3 +138,13 @@ p {
   text-align: left;
   overflow:hidden;
 }
+
+@keyframes fadein { 
+  0% { 
+    opacity:0;
+  } 100% { 
+    opacity:1; 
+  } 
+}
+
+
