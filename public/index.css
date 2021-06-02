@@ -8,7 +8,7 @@ html, body {
   height:100vh;
 }
 body {
-  padding: 30px;
+  /* padding: 30px; */
 
   font-family: Helvetica, Arial, sans-serif;
 
@@ -20,19 +20,19 @@ body {
 /* Position the navbar container inside the image */
 nav {
   display:flex;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: space-around;
+  width: 100vw;
   text-decoration: none;
   align-content: center;
 }
 nav a {
-  margin: 0 10px;
+  margin: 30px 2vw;
   color: #3fff00;
   border: 2px solid #3fff00;
   border-radius: 15px;
   text-decoration: none;
   font-size: 2em;
-  padding: 2vh 11vw;
+  padding: 2vh 8vw;
 }
 nav a:hover {
   background-color: white;
@@ -45,8 +45,9 @@ h1 {
   font-weight: normal;
 }
 .title {
-  position:absolute;
-  bottom:20px;
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
 }
 .popup {
   z-index:5;
