@@ -4,19 +4,25 @@
   <meta charset="utf-8">
   <title>Something</title>
   <link rel="stylesheet" type="text/css" href="index.css">
-
+  <script src="src/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
-  <div class="videoContainer">
-    <!-- get rid of controls once theyre fixed for the autoplay -->
-    <video autoplay controls loop id="myVideo">
+  <div class="videoContainer" >
+    <video autoplay loop id="myVideo">
       <source src="src/videocodingfinal.mp4" type="video/mp4">
     </video>
-    </div>
+  </div>
 
+  <div class="continue">
+    <a href="main.html">Continue -></a>
+  </div>
 <script>
-
+$(document).ready(function(){
+    $("#myVideo").click(function(){
+       $(this).get(0).paused ? $(this).get(0).play() : $(this).get(0).pause();
+    });
+ });
 </script>
 </body>
 </html>
