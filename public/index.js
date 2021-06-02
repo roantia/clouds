@@ -9,6 +9,14 @@ keywordTitle.innerHTML = 'Filter by keyword:'
 keywordTitle.className = 'keyword'
 keywordTitle.id = 'filter'
 keywordsContainer.appendChild(keywordTitle)
+
+function ajax(a,b,c){ // Url, Callback, just a placeholder
+ c=new XMLHttpRequest;
+ c.open('GET',a);
+ c.onload=b;
+ c.send()
+}
+
 for (let k = 0; k < database.length; k++) {
     let keyword = database[k][0][0].split('/')[0]
     let keywordElement = document.createElement('div')
@@ -36,6 +44,20 @@ for (let k = 0; k < database.length; k++) {
                     let img = document.createElement('img')
                     img.src = `img/${path}`
                     gallery.appendChild(img)
+
+                    let lang = path.split('/')[2].split('-')[0]
+                    let txtpath = window.location.origin + '/img/' + path.split('.')[0] + '.txt'
+
+                    
+
+                    img.addEventListener('click', () => {
+                        ajax(txtpath,function(){
+                            alert(this.response);
+                        });
+                        let current = img.offsetHeight
+                        img.style.height = (current=='60') ? 'auto' : '60px'
+                    })
+
                 }
             }
         })   
