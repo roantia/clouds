@@ -21,7 +21,7 @@ for (let k = 0; k < database.length; k++) {
     let keyword = database[k][0][0].split('/')[0]
     let keywordElement = document.createElement('div')
     keywordElement.className = 'keyword'
-    keywordElement.innerHTML = `>> ${keyword}`
+    keywordElement.innerHTML = `#${keyword}`
     keywordsContainer.appendChild(keywordElement)
 
     let dateContainer = document.createElement('div')
@@ -48,19 +48,24 @@ for (let k = 0; k < database.length; k++) {
                     imgdiv.appendChild(img)
                     gallery.appendChild(imgdiv)
 
-                    let lang = path.split('/')[2].split('-')[0]
-                    let txtpath = window.location.origin + '/img/' + path + '.txt'
-                    ajax(txtpath,function(){
-                      let imgtext = document.createElement('div')
-                        imgtext.className = 'text'
-                        imgtext.innerHTML = this.response
-                        imgdiv.appendChild(imgtext)
-                    });
-
                     imgdiv.addEventListener('click', () => {
                         let current = img.offsetHeight
                         img.style.height = (current=='60') ? 'auto' : '60px'
                     })
+
+                    let lang = path.split('/')[2].split('-')[0]
+                    let txtpath = window.location.origin + '/img/' + path + '.txt'
+                    ajax(txtpath,function(){
+                        if (this.status === 200) {
+                            console.log(this.status)
+                            let imgtext = document.createElement('div')
+                            imgtext.className = 'text'
+                            imgtext.innerHTML = this.response
+                            imgdiv.appendChild(imgtext)
+                        }
+                    });
+
+                    
 
                 }
             }
@@ -80,13 +85,29 @@ function loadImages() {
         let path = database[krandom][mrandom][irandom]
 
         if (!path.includes(".txt")) {
+            let imgdiv = document.createElement('div')
+            imgdiv.className = 'image'
             let img = document.createElement('img')
             img.src = `img/${path}`
-            gallery.appendChild(img)
-            img.addEventListener('click', () => {
+            imgdiv.appendChild(img)
+            gallery.appendChild(imgdiv)
+
+            imgdiv.addEventListener('click', () => {
                 let current = img.offsetHeight
                 img.style.height = (current=='60') ? 'auto' : '60px'
             })
+
+            let lang = path.split('/')[2].split('-')[0]
+                    let txtpath = window.location.origin + '/img/' + path + '.txt'
+                    ajax(txtpath,function(){
+                        if (this.status === 200) {
+                            console.log(this.status)
+                            let imgtext = document.createElement('div')
+                            imgtext.className = 'text'
+                            imgtext.innerHTML = this.response
+                            imgdiv.appendChild(imgtext)
+                        }
+                    });
         }
     }
 }
