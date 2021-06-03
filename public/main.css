@@ -88,13 +88,12 @@ p {
   font-size: 1.5em;
 }
 #research a {
-  color:#008fff;
-  margin:10px;
+  color:#3fff00;
   font-size: 1.5em;
+  text-shadow: 0 0 3em #efffe0;
 }
 #research a:hover {
   font-size: 2em;
-  border-bottom:4px;
 }
 #archive .keywords {
   display:flex;
@@ -107,7 +106,7 @@ p {
   text-align: left;
 }
 #archive .keyword:hover #archive .month:hover {
-  cursor:default;
+  cursor:pointer;
 }
 .keyword .month {
   padding-left: 1.5em;
@@ -127,6 +126,9 @@ p {
 }
 .gallery .image {
   position:relative;
+}
+.gallery .image:hover {
+  cursor:pointer;
 }
 .text {
   position:absolute;
