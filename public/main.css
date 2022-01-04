@@ -59,12 +59,12 @@ h1 {
 .popup {
   z-index:5;
   position:absolute;
-  top:52.5%;
+  top:51%;
   left:50%;
   transform: translate(-50%,-50%);
   background:rgba(0,0,0,0.75);
   width:calc(95vw - 20px);
-  height:calc(94vh - 120px - 2em);
+  height:calc(94vh - 120px - 4em);
   visibility:hidden;
   overflow-y:scroll;
   overflow-x: hidden;
